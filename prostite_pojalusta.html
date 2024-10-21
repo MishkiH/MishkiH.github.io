@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Резюме Мишкина Всеволода">
+    <title>Резюме Мишкина Всеволода</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            transition: background 0.3s, color 0.3s;
+        }
+        .container {
+            max-width: 800px;
+            padding: 20px;
+            background-color: rgba(245, 250, 235, 0.85);
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 20px;
+        }
+        h1 {
+            text-align: center;
+        }
+        .tabs {
+            display: flex;
+            justify-content: space-around;
+            margin-bottom: 20px;
+        }
+        .tab {
+            padding: 13px 14px;
+            margin: 2px;
+            text-align: center;
+            vertical-align: baseline;
+            cursor: pointer;
+            border-radius: 20px;
+            background-color: #f0f0f0;
+            transition: background-color 0.3s;
+        }
+        .tab:hover {
+            background-color: #ddd;
+        }
+        .tab.active {
+            background-color: #333;
+            color: #fff;
+        }
+        .section {
+            display: none;
+        }
+        .section.active {
+            display: block;
+        }
+        footer {
+            text-align: center;
+            font-size: 0.9em;
+            color: #666;
+            margin-top: 50px;
+        }
+        /* Темная тема */
+        body.dark {
+            background-color: #121212;
+            color: #fff;
+        }
+        body.dark .container {
+            background-color: rgba(33, 33, 33, 0.9);
+        }
+        body.dark .tab {
+            background-color: #333;
+            color: #fff;
+        }
+        body.dark .tab.active {
+            background-color: #fff;
+            color: #333;
+        }
+        
+        body.dark .audio-player {
+            background-color: rgba(36, 36, 36, 0.8);
+            color: white;
+        }
+        
+        .theme-toggle {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            padding: 10px;
+            cursor: pointer;
+            background-color: #fff;
+            border: none;
+            border-radius: 20px;
+            transition: background-color 0.3s;
+        }
+        .theme-toggle:hover {
+            background-color: #ddd;
+        }
+        body.light {
+            background-image: url('shreck_good_photo.jpg');
+            background-size: cover;
+            background-position: center;
+        }
+        body.dark {
+            background-image: url('dark_shreck.jpg');
+        }
+        .audio-player {
+            position: fixed;
+            left: 20px;
+            bottom: 20px;
+            display: flex;
+            align-items: center;
+            padding: 10px;
+            background-color: rgba(245, 250, 235, 0.85);
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+            border-radius: 20px;
+            font-size: 14px;
+            transition: background-color 0.3s;
+        }
+        
+        .audio-player:hover {
+            background-color: rgba(245, 250, 235, 0.85);
+        }
+        .audio-player button {
+            background-color: transparent;
+            border: none;
+            cursor: pointer;
+            margin-right: 10px;
+        }
+        .audio-player button img {
+            width: 24px;
+            height: 24px;
+        }
+        .audio-player audio {
+            display: none;
+        }
+    </style>
+</head>
+<body class="light">
+    <div class="container">
+        <h1>Всеволод Мишкин</h1>
+
+        <button class="theme-toggle">Тёмная тема</button>
+
+        <div class="tabs">
+            <div class="tab active" data-target="about">О себе</div>
+            <div class="tab" data-target="skills">Навыки</div>
+            <div class="tab" data-target="projects">Проекты</div>
+            <div class="tab" data-target="education">Образование</div>
+            <div class="tab" data-target="experience">Опыт</div>
+            <div class="tab" data-target="achievements">Достижения</div>
+            <div class="tab" data-target="values">Жизненная позиция</div>
+        </div>
+
+        <section id="about" class="section active">
+            <h2>О себе</h2>
+            <p>С детства стремлюсь к продвижению в различных сферах! Мне кажется, что важно пробовать всевозможные подходы к самореализации. Помимо любительского кодинга в рамках своей специализации я:</p>
+            <li>Играю на настоящем саксофоне. </li>
+            <li>Периодически занимаюсь свадебной фотографией. </li>
+            <li>Предоставляю услуги ремонта техники ранга "смартфон" и сборки устройств типа "персональный компьютер". С ноутбуками и некоторой другой техникой также в ладу.</li>
+            <li>Параллельно с этим веду блог на видеохостинге <s>YouTube</s>  VK видео - стараюсь следить за трендами. Например, создание миниатюрных городов из упаковок мясных изделий "Чевапчичи. Мираторг" с использованием различных техник моделирования и декорирования. </li>
+            <li>В 10 лет садился на шпагат. Есть фото. </li>
+            <li>Тут была одна ложь.</li>
+        </section>
+
+        <section id="skills" class="section">
+            <h2>Навыки</h2>
+            <ul>
+                <li>Базовые знания Python, C++. Очень хочу изучить Go, но это потом как-нибудь...</li>
+                <li>Безукоризненный опыт работы с жизненно необходимыми библиотеками: turtle, numpy, math и не помню</li>
+                <li>Django, Flask, Pandas, PyQT, PyTorch - все эти здоровские фреймворки обошли меня стороной. Ну и ладно, не очень-то и хотелось.</li>
+                <li>Профессиональное владение поисковиками Google, Yandex, Bing и на уровне джуна DuckDuckGo </li>
+                <li>Опыт работы в Photoshop – 4 года. Предоставляю услуги ретуши фото за сто рублей (например, фотокарточка на документы или сети социального лагеря)</li>
+                <li>Придерживаюсь здорового образа жизни. Не пью. Вообще. Получаю эйфорию от лучей солнца.</li>
+            </ul>
+        </section>
+
+        <section id="projects" class="section">
+            <h2>Проекты</h2>
+            <ul>
+                <li>Телеграм-бот, способный подобрать лучший хит Валерия Меладзе по Вашему знаку зодиака. В разработке применялись новейшие нейросети и прочие передовые технологии Искусственного Интеллекта, чтобы создать уникальный опыт для каждого пользователя. Бот анализирует не только знак зодиака, но и другие личностные особенности, такие как: музыкальные предпочтения, настроение, марку телефона, оператора сотовой связи, лечебные грязи, чувство вины перед родителями после полученной двойки, насколько в целом вы ребёнок бойкий и конечно дату последнего посещения душевой комнаты, чтобы предложить самый подходящий трек священного исполниться нашей эпохи. Этот бот не просто подбирает песню, а создает целостный и глубокий опыт, который поможет насладиться творчеством Валерия Меладзе в новом инновационном формате. Заказчик остался доволен.</li>
+                <li>Некоторое время назад был реализован проект по созданию захватывающей игры DiscoMemory на библиотеке графического вывода turtle, предназначенной изначально немножко для других целей, но одно другому не мешает. DiscoMemory — это увлекательная игра на развитие памяти в стиле 8-бит, где игроку предстоит запоминать и повторять последовательности из 9 разноцветных клеточек. Это правда очень сложно, справлялся далеко не каждый. Из трёх тестеров одного в конвульсиях доставили в диспансер. Но это неважно. Игра начинается с одной подсвеченной клетки, которую нужно выбрать, затем сложность постепенно возрастает: игроку необходимо воспроизводить всё более длинные цепочки клеток. За правильные ответы начисляются очки, фиксируется рекорд. (возможна интеграция с блокчейном и запуск собственной монеты на базе TON. Переговоры с Павлом Дуровым в активной фазе). Игра стилизована под ретро-эстетику с пиксельной графикой и сопровождается 8-битной мелодией, создавая атмосферу классических аркад. DiscoMemory — это вызов для памяти, погружающий в ностальгический мир пикселей и музыки. По личным расчётом проект мог претендовать на звание игры года, но из-за нюанса сдачи экзаменов в школе проект был временно заморожен. На данном этапе возможно возобновление работы: на старом ноутбуке сохранился рабочий билд.</li>
+                <li>Здесь не было лжи. Максимум приукрашивание.</li>
+            </ul>
+        </section>
+
+        <section id="education" class="section">
+            <h2>Образование</h2>
+            <ul>
+                <li>Детский садик "Капитошка", Выпуск 2012</li>
+                <li>Среднее общее образование, МБОУ СОШ №13, г.Пенза (ЗАКОНЧЕННОЕ)</li>
+                <li>Музыкальная школа, медно-духовое отделение – 5 лет, красный аттестат</li>
+            </ul>
+        </section>
+
+        <section id="experience" class="section">
+            <h2 class="section-title">Опыт учёбы</h2>
+            <ul>
+                <li>Полтора месяца студент образовательной программы "Прикладной анализ данных и искусственный интеллект" в НИУ ВШЭ, г. Санкт-Петербург.</li>
+            </ul>
+            <h2 class="section-title">Опыт работы</h2>
+            <ul>
+                <li>Не требуется.</li>
+            </ul>
+        </section>
+            </ul>
+        </section>
+
+        <section id="achievements" class="section">
+            <h2>Достижения</h2>
+            <ul>
+                <li>Победитель школьного этапа олимпиады "Русский котёнок"</li>
+                <li>Золотой значок КТО</li>
+                <li>Если это Вас не впечатлило, напоминаю, что всего за сто рублей я могу отредактировать Ваше чудесное фото. +7(998)-29-49-13</li>
+            </ul>
+        </section>
+
+        <section id="values" class="section">
+            <h2>Жизненная позиция</h2>
+            <p>Котики – лучшее, что придумало человечество. Они помогают нам сохранять эмоциональную стабильность и справляться с учебными нагрузками. Если бы не они, я не знаю, что бы сейчас было. Это просто вау на самом деле. Поражаюсь с их существования.. И это не просто субъективное мнение, а аргументированная позиция, подкреплённая рядом объективных факторов. Котики — это просто топчик! Они такие мягкие, пушистые комочки счастья, которые умеют лечить душу одним взглядом. После тяжёлого рабочего дня, когда всё бесит и мир рушится, кот просто подойдёт, муркнет, и всё — стресс как рукой сняло! Погладил его, и будто весь негатив испарился. А ещё, они такие няшные с их огромными глазищами, что смотреть на них можно бесконечно, как на огонь и воду. Да и вообще, кто ещё так круто прыгает в коробки и забавно валяется на спине? Котики — антистресс в чистом виде, факт! Да-да, котики — это вообще как живая терапия. Они всегда рядом, когда надо обнять кого-то пушистого и просто расслабиться. И даже если они сносят с полок всё подряд или разбрасывают вещи, их милая мордочка моментально прощает все грехи. Ну а эти случайные атаки на ноги или внезапные прыжки в 3 утра? Это как мини-игра в жизни, держит в тонусе! И знаешь, просто наблюдать за тем, как они лениво потягиваются или забавно мяукают, — уже кайф. И самое прикольное, что у каждого котика своя фишка! Один будет орать на тебя за еду с утра, как будто месяц не лопал ни котлетины, другой — вечно пытаться залезть на клавиатуру, как только ты решишь легонько поработать. А ещё они мастера по позам для сна: развалятся как короли на твоей подушке, а ты с краю умудряешься уснуть. Но это же так мило, что все эти мелкие "приколы" просто добавляют в жизнь уюта. И, кстати, даже если коты не всегда настроены на обнимашки, их независимость как будто учит нас ценить моменты. Так что котики — это не просто пушистые балбесы, а настоящие гуру жизни. Это маленькие фурри-боги, которые делают наши будни чуточку легче и нечуточку веселее.</p>
+        </section>
+
+        <footer>
+            <p>© Продам гараж тел. +7(998)-29-49-13. Галина</p>
+        </footer>
+    </div>
+
+    <div class="audio-player">
+        <button id="play-pause">
+            <img src="play_icon.png" alt="Play" id="play-icon">
+        </button>
+        <span>Настоятельно рекомендую включить этот расслабляющий трек перед прочтением резюме</span>
+        <audio id="audio" src="theme.mp3"></audio>
+    </div>
+
+    <script>
+        const tabs = document.querySelectorAll('.tab');
+        const sections = document.querySelectorAll('.section');
+
+        tabs.forEach(tab => {
+            tab.addEventListener('click', () => {
+                tabs.forEach(t => t.classList.remove('active'));
+                tab.classList.add('active');
+                
+                sections.forEach(section => section.classList.remove('active'));
+                document.getElementById(tab.getAttribute('data-target')).classList.add('active');
+            });
+        });
+
+        const toggleButton = document.querySelector('.theme-toggle');
+        let isDarkMode = false;
+
+        toggleButton.addEventListener('click', () => {
+            isDarkMode = !isDarkMode;
+            document.body.className = isDarkMode ? 'dark' : 'light';
+            toggleButton.textContent = isDarkMode ? 'Светлая тема' : 'Тёмная тема';
+        });
+
+        const audio = document.getElementById('audio');
+        const playPauseButton = document.getElementById('play-pause');
+        const playIcon = document.getElementById('play-icon');
+
+        playPauseButton.addEventListener('click', () => {
+            if (audio.paused) {
+                audio.play();
+                playIcon.src = 'pause_icon.png';
+            } else {
+                audio.pause();
+                playIcon.src = 'play_icon.png';
+            }
+        });
+    </script>
+</body>
+</html>
+
